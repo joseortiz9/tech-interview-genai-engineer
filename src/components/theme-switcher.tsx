@@ -1,6 +1,6 @@
 "use client";
 
-import {Button} from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -8,20 +8,19 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import {Laptop, LucideIcon, Moon, Sun} from "lucide-react";
-import {useTheme} from "next-themes";
-import {createElement, useEffect, useState} from "react";
+import { Laptop, type LucideIcon, Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
+import { createElement, useEffect, useState } from "react";
 
 const ICON_SIZE = 16;
 
-type ThemeType = 'light' | 'dark' | 'system';
+type ThemeType = "light" | "dark" | "system";
 
 const IconMapper: Record<ThemeType, LucideIcon> = {
-  'light': Sun,
-  'dark': Moon,
-  'system': Laptop,
+  light: Sun,
+  dark: Moon,
+  system: Laptop,
 };
-
 
 const ThemeSwitcher = () => {
   const [mounted, setMounted] = useState(false);
@@ -41,11 +40,11 @@ const ThemeSwitcher = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="sm">
+        <Button variant="secondary" size="icon">
           {createElement(CurrentIcon, {
             key: currentTheme,
             size: ICON_SIZE,
-            className: "text-muted-foreground"
+            className: "text-muted-foreground",
           })}
         </Button>
       </DropdownMenuTrigger>

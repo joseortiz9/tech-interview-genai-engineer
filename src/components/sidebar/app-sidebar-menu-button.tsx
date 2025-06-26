@@ -11,14 +11,14 @@ export function AppSidebarMenuButton({
   active,
   children,
 }: React.PropsWithChildren<{ url: string; active: boolean }>) {
-  const [isActive, setisActive] = useState<boolean | undefined>(undefined);
+  const [isActive, setIsActive] = useState<boolean | undefined>(undefined);
   const pathname = usePathname();
 
   useEffect(() => {
     if (pathname === url) {
-      setisActive(true);
+      setIsActive(true);
     } else {
-      setisActive(false);
+      setIsActive(false);
     }
   });
 
