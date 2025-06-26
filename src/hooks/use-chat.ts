@@ -12,7 +12,7 @@ const defaultSystemMessage: ChatMessage = {
     "\n" +
     "What economic insights are you looking for today?",
   role: "system",
-  created_at: new Date(),
+  created_at: new Date().toISOString(),
 };
 
 export const useChat = (initialMessages: ChatMessage[] = []) => {
@@ -34,14 +34,14 @@ export const useChat = (initialMessages: ChatMessage[] = []) => {
       id: crypto.randomUUID(),
       content: query,
       role: "user",
-      created_at: new Date(),
+      created_at: new Date().toISOString(),
     };
 
     const systemMessagePlaceholder: ChatMessage = {
       id: crypto.randomUUID(),
       content: "",
       role: "system",
-      created_at: new Date(),
+      created_at: new Date().toISOString(),
     };
 
     setIsLoading(true);
