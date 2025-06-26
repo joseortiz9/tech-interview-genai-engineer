@@ -68,7 +68,7 @@ export const submitQuery = async (query: string) => {
 
       const { data, error: rpcError } = await supabase.rpc("search_documents", {
         query_embedding: embedding,
-        match_threshold: 0.7,
+        match_threshold: 0.2,
         match_count: 10,
       });
       if (rpcError) {
