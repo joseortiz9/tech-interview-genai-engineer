@@ -1,6 +1,6 @@
 import { LogoutButton } from "@/components/logout-button";
 import { Card } from "@/components/ui/card";
-import type { UserResponse } from "@supabase/auth-js";
+import type { UserResponse } from "@supabase/supabase-js";
 import { use } from "react";
 
 interface AppSidebarUserCardProps {
